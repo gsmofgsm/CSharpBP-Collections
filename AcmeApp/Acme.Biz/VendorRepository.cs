@@ -31,19 +31,19 @@ namespace Acme.Biz
             return vendor;
         }
 
-        public Vendor[] RetrieveArray()
-        {
-            return new Vendor[2]
-                {
-                    new Vendor()
-                        { VendorId = 1, CompanyName = "ABC Corp", Email = "abc@abc.com" },
-                    new Vendor()
-                        { VendorId = 2, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" }
-                };
+        //public Vendor[] RetrieveArray()
+        //{
+        //    return new Vendor[2]
+        //        {
+        //            new Vendor()
+        //                { VendorId = 1, CompanyName = "ABC Corp", Email = "abc@abc.com" },
+        //            new Vendor()
+        //                { VendorId = 2, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" }
+        //        };
 
-        }
+        //}
 
-        public List<Vendor> Retrieve()
+        public ICollection<Vendor> Retrieve()
         {
             if (vendors == null)
             {
@@ -68,36 +68,36 @@ namespace Acme.Biz
             return vendors;
         }
 
-        public Dictionary<string, Vendor> RetrieveWithKeys()
-        {
-            var vendors = new Dictionary<string, Vendor>()
-            {
-                { "ABC Corp", new Vendor()
-                    { VendorId = 5, CompanyName = "ABC Corp", Email = "abc@abc.com" }},
-                { "XYZ Inc", new Vendor()
-                    { VendorId = 5, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" }}
-            };
+        //public Dictionary<string, Vendor> RetrieveWithKeys()
+        //{
+        //    var vendors = new Dictionary<string, Vendor>()
+        //    {
+        //        { "ABC Corp", new Vendor()
+        //            { VendorId = 5, CompanyName = "ABC Corp", Email = "abc@abc.com" }},
+        //        { "XYZ Inc", new Vendor()
+        //            { VendorId = 5, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" }}
+        //    };
 
-            foreach (var companyName in vendors.Keys)
-            {
-                Console.WriteLine(companyName);
-                Console.WriteLine(vendors[companyName]);
-            }
+        //    foreach (var companyName in vendors.Keys)
+        //    {
+        //        Console.WriteLine(companyName);
+        //        Console.WriteLine(vendors[companyName]);
+        //    }
 
-            foreach (var vendor in vendors.Values)
-            {
-                Console.WriteLine(vendor);
-            }
+        //    foreach (var vendor in vendors.Values)
+        //    {
+        //        Console.WriteLine(vendor);
+        //    }
 
-            foreach (var element in vendors)
-            {
-                var vendor = element.Value;
-                var key = element.Key;
-                Console.WriteLine($"Key: {key} Value: {vendor}");
-            }
+        //    foreach (var element in vendors)
+        //    {
+        //        var vendor = element.Value;
+        //        var key = element.Key;
+        //        Console.WriteLine($"Key: {key} Value: {vendor}");
+        //    }
 
-            return vendors;
-        }
+        //    return vendors;
+        //}
 
         public T RetrieveValue<T>(string sql, T defaultValue)
         {
