@@ -16,28 +16,44 @@ namespace Acme.Biz
         #region Constructors
         public Product()
         {
-            //var colorOptions = new string[4];
-            //colorOptions[0] = "Red";
-            //colorOptions[1] = "Espresso";
-            //colorOptions[2] = "White";
-            //colorOptions[3] = "Navy";
+            #region Using Array
+            ////var colorOptions = new string[4];
+            ////colorOptions[0] = "Red";
+            ////colorOptions[1] = "Espresso";
+            ////colorOptions[2] = "White";
+            ////colorOptions[3] = "Navy";
 
-            string[] colorOptions = { "Red", "Espresso", "White", "Navy" };  // Collection initializer
+            //string[] colorOptions = { "Red", "Espresso", "White", "Navy" };  // Collection initializer
 
-            var brownIndex = Array.IndexOf(colorOptions, "Espresso");
+            //var brownIndex = Array.IndexOf(colorOptions, "Espresso");
 
-            colorOptions.SetValue("Blue", 3);
+            //colorOptions.SetValue("Blue", 3);
 
-            for (int i = 0; i < colorOptions.Length; i++)
-            {
-                colorOptions[i] = colorOptions[i].ToLower();
-            }
+            //for (int i = 0; i < colorOptions.Length; i++)
+            //{
+            //    colorOptions[i] = colorOptions[i].ToLower();
+            //}
 
-            foreach (var color in colorOptions)
-            {
-                Console.WriteLine($"The color is {color}");
-            }
-            Console.WriteLine(colorOptions[1]);
+            //foreach (var color in colorOptions)
+            //{
+            //    Console.WriteLine($"The color is {color}");
+            //}
+            //Console.WriteLine(colorOptions[1]);
+            #endregion
+
+            #region Using List
+            //var colorOptions = new List<string>();
+            //colorOptions.Add("Red");
+            //colorOptions.Add("Espresso");
+            //colorOptions.Add("White");
+            //colorOptions.Add("Navy");
+            //colorOptions.Insert(2, "Purple");
+            //colorOptions.Remove("White");  // remove the first
+
+            var colorOptions = new List<string>()
+                                { "Red", "Espresso", "Purple", "Navy" };
+            Console.WriteLine(colorOptions);
+            #endregion
         }
         public Product(int productId,
                         string productName,
