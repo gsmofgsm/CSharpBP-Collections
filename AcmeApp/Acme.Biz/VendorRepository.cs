@@ -31,6 +31,18 @@ namespace Acme.Biz
             return vendor;
         }
 
+        public Vendor[] RetrieveArray()
+        {
+            return new Vendor[2]
+                {
+                    new Vendor()
+                        { VendorId = 1, CompanyName = "ABC Corp", Email = "abc@abc.com" },
+                    new Vendor()
+                        { VendorId = 2, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" }
+                };
+
+        }
+
         public List<Vendor> Retrieve()
         {
             if (vendors == null)
